@@ -6,8 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>Huecos GrupoInter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <header class="container mx-auto">Hola mundo</header>
+        <main>
+            <video id="player" controls autoplay></video>
+            <button id="capture">Capture</button>
+            <canvas id="canvas" width=320 height=240></canvas>
+        </main>
 </body>
+<script>
+  const player = document.getElementById('player');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  const captureButton = document.getElementById('capture');
+
+  const constraints = {
+    video: true,
+  };
+
+  captureButton.addEventListener('click', () => {
+    context.drawImage(player, 0, 0, canvas.width, canvas.height);
+
+    // Stop all video streams.
+    player.srcObject.getVideoTracks().forEach(track => track.stop());
+  });
+
+  navigator.mediaDevices.getUserMedia(constraints)
+    .then((stream) => {
+      // Attach the video stream to the video element and autoplay.
+      player.srcObject = stream;
+    });
+</script>
 </html>
