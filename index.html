@@ -7,9 +7,13 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>Huecos GrupoInter</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body class="grid justify-items-center mx-auto ">
-        <main>
+        <!-- <main>
 
             <form>
                 <label for="si_ola">Aquí es
@@ -22,9 +26,54 @@
 
             </form>
             <iframe src="https://calendar.google.com/calendar/embed?src=c_0mt1tsfnir1uttlh7k44g1idik%40group.calendar.google.com&ctz=America%2FBogota" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        </main>
+        </main> -->
+
+        <section class="calendar grid justify-items-center w-full">
+          <h3 class="calendar__title font-bold text-3xl mt-16">AGENDA TU CITA</h3>
+
+          <h3 class="calendar__title font-bold text-3xl mt-16">PUNTO DE VENTA:</h3>
+          <select id="city" name="selection" class="calendar__selector mt-8 rounded-md">
+            <option value="SAN-JUAN">SAN JUAN</option>
+            <option value="SAN-JUAN-2">SAN JUAN 2</option>
+            <option value="SAN-JUAN-3">SAN JUAN 3</option>
+          </select>
+          <div class="grid grid-cols-2">
+            <div class="border h-3 w-5">
+              1
+            </div>
+            <div class="border h-3 w-5">
+              <ul>
+                <li>10:00 A.M.</li>
+                <li>10:30 A.M.</li>
+                <li>11:00 A.M.</li>
+                <li>11:30 A.M.</li>
+                <li>12:00 A.M.</li>
+                <li>12:30 A.M.</li>
+                <li>1:00 P.M.</li>
+              </ul>
+            </div>
+          </div>
+          <a class="btn-agendar px-4 py-1 rounded-md mb-6 mt-20">HACER EFECTIVO MI DESCUENTO</a>
+
+        </section>
+
+        <section class="form grid justify-items-center w-full">
+          <div class=" container m-auto grid justify-items-center font-bold text-3xl ">
+            <label for="Nombre" class="mt-16">Nombre</label>
+            <input type="text" name="Nombre" id="name" class="rounded-md">
+            <label for="mail" class="">Correo</label>
+            <input type="text" name="mail" id="mail" class="rounded-md">
+            <label for="tel" class="">Teléfono</label>
+            <input type="text" name="tel" id="tel" class="rounded-md">
+          </div>
+          <a class="btn-agendar px-4 py-1 rounded-md mb-6 mt-20">AGENDA TU CITA YA</a>
+          <p class="form__text text-center mb-20">DANDO <a href="#" class="click__me">CLIC AQUÍ</a> ESTÁS ACEPTANDO
+            NUESTROS TÉRMINOS Y CONDICIONES</pt>
+        </section>
+
 </body>
-<script>
+<script src="js/custom-selector.js"></script>
+<!-- <script>
   const player = document.getElementById('player');
   const canvas = document.getElementById('canvas');
   const context = canvas.getContext('2d');
@@ -46,5 +95,5 @@
       // Attach the video stream to the video element and autoplay.
       player.srcObject = stream;
     });
-</script>
+</script> -->
 </html>
