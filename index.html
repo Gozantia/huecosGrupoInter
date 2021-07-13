@@ -6,33 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>Huecos GrupoInter</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e1fce9e008.js" crossorigin="anonymous"></script>
+
 </head>
-<body class="grid justify-items-center mx-auto ">
-        <main>
-
+<body class="w-screen grid justify-items-center">
+        
+          <header class="grid w-screen p-4"> 
+            
+            <div class="tittleTop">
+              <p>un</p><h2>Hueco</h2> 
+            </div>
+            <img src="logoGrupoInter.svg" alt="GrupoInter" class="logo-img">
+            <div class="tittleBottom">
+              <p>un</p> <h2>Descuento</h2> <p>del</p> <h2>20</h2><p>%</p>
+            </div>
+          </header>
+          <main> 
             <form>
-                <label for="si_ola">Aquí es
-                <input type="file" name="si_ola" />
-            </label>
+                <section class=" grid justify-items-center" >
+                  <h4>SI CAÍSTE EN UN HUECO</h4>
+                  <h2>sube la foto aquí.</h2>
+                  <article class="fileChoice flex border border-gray-400 rounded p-2 w-3/5">
+                    <div class="flex-1 border-r border-gray-600">
+                      <input type="file" name="file" id="file" class="input-file">
+                      <label for="file" class="js-labelFile">
+                        <i class="icon fa fa-images"></i>
+                        <span >AGREGAR </span>
+                        <span >IMAGEN</span>
+                      </label>
+                    </div>
+                    <div class="flex-1 activarCamara">
+                      <i class="fas fa-camera-retro"></i>
+                      <span >TOMAR </span>
+                      <span >FOTO </span>
+                    </div>
+                  </article> 
 
-            <video id="player" controls autoplay></video>
-            <div id="capture">Capture</div>
-            <canvas id="canvas" width=320 height=240></canvas>
+                  <a class="btn-agendar px-4 py-1 rounded-md mb-6 mt-20">AGENDA TU CITA YA</a>
+                  <div class="tomarFoto">
+                            <video id="player"  autoplay></video>
+                            <div id="capture">Capture</div>
+                            <canvas id="canvas" width=320 height=240></canvas>
+                  </div>
+    
+                  
+
+                </section>
 
             </form>
-            <iframe src="https://calendar.google.com/calendar/embed?src=c_0mt1tsfnir1uttlh7k44g1idik%40group.calendar.google.com&ctz=America%2FBogota" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </main>
 </body>
+
+
 <script>
+     
+
+
+   $(document).ready(function(){
+    const constraints = {
+    video: true,
+  };
+
+$(".tomarFoto").hide()
+$(".activarCamara").click(function(){
+
+
+    $(".tomarFoto").show();
+  });
+
   const player = document.getElementById('player');
   const canvas = document.getElementById('canvas');
   const context = canvas.getContext('2d');
   const captureButton = document.getElementById('capture');
 
-  const constraints = {
-    video: true,
-  };
+
 
   captureButton.addEventListener('click', () => {
     context.drawImage(player, 0, 0, canvas.width, canvas.height);
@@ -46,5 +95,10 @@
       // Attach the video stream to the video element and autoplay.
       player.srcObject = stream;
     });
+
+
+});
+
+
 </script>
 </html>
