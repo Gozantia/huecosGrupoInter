@@ -1,0 +1,77 @@
+body {
+    background: #f1efe2;;
+}
+header {
+    background: #a82b29;
+    color: #f1efe2;
+    text-transform: uppercase;
+    grid-template-columns: 5fr 1fr; 
+  grid-template-areas: 
+    "tittleTop logo-img"
+    "tittleBottom tittleBottom"; 
+}
+.tittleTop { grid-area: tittleTop; }
+.logo-img { grid-area: logo-img; }
+.tittleBottom { grid-area: tittleBottom; }
+
+header div {
+    display: flex;
+}
+header h2 {
+    line-height: 0.8;
+}
+
+header p, h2 {
+    display: inline;
+}
+
+h1, h2 {
+    font-size: 9vw;
+}
+
+/* input file style */
+
+.input-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+
+}
+.js-labelFile {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 10px;
+    cursor: pointer;
+    display: grid;
+    justify-items: center;
+}
+article div {
+    display: grid;
+    justify-items: center;
+
+}
+.icon {
+    transform: rotate(355deg);
+}
+.fileChoice {
+    background: #efe0c3;
+}
+
+.fileChoice div {
+    cursor:pointer;
+}
+
+.btn-agendar{
+    background-color: #a72b29;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Bebas', sans-serif;
+}
+.btn-agendar:hover,
+.btn-agendar:active{
+    background-color: #d22c29;
+}
