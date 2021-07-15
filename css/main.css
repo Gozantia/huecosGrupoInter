@@ -19,6 +19,7 @@ input{
     width: 75%;
     margin: .2em auto .7em;
     font-size: .5em;
+    text-align: center;
 }
 .btn-agendar{
     background-color: #a72b29;
@@ -132,4 +133,12 @@ box-shadow: -1px 5px 15px 5px rgba(0,0,0,0.26);
     background-color: none;
 }
 
+/* media */
 
+  @media(min-width: 420px){
+    .calendar,
+    .form{
+      background-image: url('../img/bg-2-h.png');
+      background-size: 85%;
+    }
+  }

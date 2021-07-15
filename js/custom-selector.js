@@ -47,3 +47,28 @@ $('select').each(function(){
     });
 
 });
+
+$('#pais').on('change', function(){
+    const pais = $('#pais').val();
+    const depto = $('#departamento');
+    let guate = ["Alta Verapaz", "Baja Verapaz", "Chimaltenango", "Chiquimula", "Petén", "El Progreso", "Quiché", "Escuintla", "Guatemala", "Huehuetenango", "Izabal", "Jalapa", "Jutiapa", "Quetzaltenango", "Retalhuleu", "Sacatepéquez", "San Marcos", "Santa Rosa", "Sololá", "Suchitepéquez", "Totonicapán", "Zacapa"];
+    let belice = ["Belice", "Cayo", "Corozal", "Orange Walk", "Stann Creek", "Toledo"];
+    
+    switch (pais) {
+      case '1':
+        depto.html('<option value="no">Selecciona un departamento</option>')
+        $.each(guate, function(i, val){
+          depto.append("<option value="+i+">"+val+"</option>");
+        });
+        break;
+      case '2':
+        depto.html('<option value="no">Selecciona un departamento</option>');
+        $.each(belice, function(i, val){
+          depto.append("<option value="+i+">"+val+"</option>");
+        });
+        break;
+      default:
+        depto.html('<option>Selecciona un departamento</option>')
+        break;
+    }
+  });
