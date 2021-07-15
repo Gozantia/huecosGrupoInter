@@ -52,6 +52,16 @@ h1, h2 {
 article div {
     display: grid;
     justify-items: center;
+    color: #222;
+    transition: 0.3s;
+    margin-top: 0;
+
+
+}
+article div:hover {
+
+    color: #a82c29;
+    
 
 }
 .icon {

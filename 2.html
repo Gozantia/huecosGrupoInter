@@ -45,6 +45,7 @@
                       </label>
                     </div>
                     <div class="flex-1 activarCamara">
+                      <input type="file" accept="image/*" capture="camera">
                       <i class="fas fa-camera-retro"></i>
                       <span >TOMAR </span>
                       <span >FOTO </span>
@@ -98,42 +99,7 @@
 </body>
 <script src="js/custom-selector.js"></script>
 <script src="js/citas.js"></script>
-<!-- <script>     
 
-   $(document).ready(function(){
-    const constraints = {
-    video: true,
-  };
-
-$(".tomarFoto").hide()
-$(".activarCamara").click(function(){
-
-
-    $(".tomarFoto").show();
-  });
-
-  const player = document.getElementById('player');
-  const canvas = document.getElementById('canvas');
-  const context = canvas.getContext('2d');
-  const captureButton = document.getElementById('capture');
-
-
-
-  captureButton.addEventListener('click', () => {
-    context.drawImage(player, 0, 0, canvas.width, canvas.height);
-
-    // Stop all video streams.
-    player.srcObject.getVideoTracks().forEach(track => track.stop());
-  });
-
-  navigator.mediaDevices.getUserMedia(constraints)
-    .then((stream) => {
-      // Attach the video stream to the video element and autoplay.
-      player.srcObject = stream;
-    });
-    
-  });
-</script> -->
 
 </script>
 </html>
