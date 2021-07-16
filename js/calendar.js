@@ -4,7 +4,6 @@ $(document).ready(function () {
            var currMonth = d.getMonth();
            var currYear = d.getFullYear();
            var startDate = new Date(currYear, currMonth, 1);
-   
   var options = {
     allowTimes: [
       "8:00",
@@ -23,9 +22,13 @@ $(document).ready(function () {
     inline:true,
     mask:'9999/19/39',
     format:'Y/m/d H:i',
-    yearEnd: 2021,
+    // yearEnd: 2021,
     roundTime: 'round',
-    disabledWeekDays: [0]
+    disabledWeekDays: [0],
+    changeYear: true,
+    yearStart: '2020',
+    yearEnd: '2021',
   };
   jQuery("#datetimepicker").datetimepicker(options);
 });
+
