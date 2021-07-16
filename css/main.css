@@ -25,7 +25,9 @@ input{
     background-color: #a72b29;
     color: #fff;
     font-weight: 700;
+    cursor: pointer;
     font-family: 'Bebas', sans-serif;
+    text-transform: uppercase;
 }
 .btn-agendar:hover,
 .btn-agendar:active{

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>Huecos GrupoInter</title>
+    <link rel="shortcut icon" type="icon" href="favicon.ico"/>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
@@ -15,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body class="grid justify-items-center mx-auto ">
-    <main>
+
 
 </head>
 <body class="w-screen grid justify-items-center">
@@ -30,11 +31,14 @@
               <p>un</p> <h2>Descuento</h2> <p>del</p> <h2>20</h2><p>%</p>
             </div>
           </header>
-          <main> 
+       
             <form>
-                <section class=" grid justify-items-center" >
-                  <h4>SI CAÍSTE EN UN HUECO</h4>
-                  <h2>sube la foto aquí.</h2>
+                <section class="grid justify-items-center items-center" id="section1" >
+                  <div class="text-center">
+                    <h4>SI CAÍSTE EN UN HUECO</h4>
+                    <h3>sube la foto aquí.</h3>
+                  </div>
+                
                   <article class="fileChoice flex border border-gray-400 rounded p-2 w-3/5">
                     <div class="flex-1 border-r border-gray-600">
                       <input type="file" name="file" id="file" class="input-file">
@@ -54,24 +58,29 @@
                     </div>
                   </article> 
 
-                  <a class="btn-agendar px-4 py-1 rounded-md mb-6 mt-20">AGENDA TU CITA YA</a>
-                  <div class="tomarFoto">
-                            <video id="player"  autoplay></video>
-                            <div id="capture">Capture</div>
-                            <canvas id="canvas" width=320 height=240></canvas>
-                  </div>
-    
-                  
-
+                  <a class="btn-agendar px-4 py-1 rounded-md"  id="reclama">Reclama tu descuento</a>
                 </section>
+          <section class=" grid justify-items-center items-center text-center" id="section2" >
+            <article class= "font-bold text-3xl w-screen ">
+              <label for="Nombre" class="mt-16">Nombre</label>
+              <input type="text" name="Nombre" id="name" class="rounded-md">
+              <label for="mail" class="">Correo</label>
+              <input type="text" name="mail" id="mail" class="rounded-md">
+              <label for="tel" class="">Teléfono</label>
+              <input type="text" name="tel" id="tel" class="rounded-md">
+            </article>
+            <div>
+              <a class="btn-agendar px-4 py-1 rounded-md mb-6 " id="agenda">AGENDA TU CITA YA</a>
+              <p class="form__text text-center mt-2">ACTIVANDO EL BOTÓN ACEPTAS
+                NUESTROS <a href="#" class="click__me">TÉRMINOS Y CONDICIONES</a> </p>
+            </div>
+    
+        </section>
 
-            </form>
-        </main>
+        <section class="grid justify-items-center items-center text-center" id="section3" >
+          <h3 class="calendar__title font-bold text-3xl">AGENDA TU CITA</h3>
 
-        <section class="calendar grid justify-items-center w-full">
-          <h3 class="calendar__title font-bold text-3xl mt-16">AGENDA TU CITA</h3>
-
-          <h3 class="calendar__title font-bold text-3xl mt-16">PUNTO DE VENTA:</h3>
+          <h3 class="calendar__title font-bold text-3xl">PUNTO DE VENTA:</h3>
           <select id="city" name="selection" class="calendar__selector mt-8 rounded-md">
             <option value="SAN-JUAN">SAN JUAN</option>
             <option value="SAN-JUAN-2">SAN JUAN 2</option>
@@ -80,28 +89,32 @@
 
           <div class="container-locales" id="locales"></div>
          
-          <a class="btn-agendar px-4 py-1 rounded-md mb-6 mt-20">HACER EFECTIVO MI DESCUENTO</a>
+          <a class="btn-agendar px-4 py-1 rounded-md mb-6 mt-20" id="descuento">HACER EFECTIVO MI DESCUENTO</a>
 
         </section>
 
-        <section class="form grid justify-items-center w-full">
-          <div class=" container m-auto grid justify-items-center font-bold text-3xl ">
-            <label for="Nombre" class="mt-16">Nombre</label>
-            <input type="text" name="Nombre" id="name" class="rounded-md">
-            <label for="mail" class="">Correo</label>
-            <input type="text" name="mail" id="mail" class="rounded-md">
-            <label for="tel" class="">Teléfono</label>
-            <input type="text" name="tel" id="tel" class="rounded-md">
-          </div>
-          <a class="btn-agendar px-4 py-1 rounded-md mb-6 mt-20">AGENDA TU CITA YA</a>
-          <p class="form__text text-center mb-20">DANDO <a href="#" class="click__me">CLIC AQUÍ</a> ESTÁS ACEPTANDO
-            NUESTROS TÉRMINOS Y CONDICIONES</pt>
-        </section>
 
+        <section class=" text-center w-9/12 mx-auto " id="section4">
+          <h3 class="my-4">¡TU CITA ESTA AGENDADA!</h3>
+
+          <p>
+            TU DESCUENTO TE ESTÁ ESPERANDO
+            EN EL PUNTO DE SERVICIO “SAN JUAN”,
+            ESTE VIERNES 17 DE JULIO A LAS 11:30 A.M.
+          </p>
+          <p  class="my-4">
+            RECIBIRÁS UN QR EN TU CORREO,
+            PRESÉNTALO PARA HACER EFECTIVO
+            TU DESCUENTO.
+          </p>
+
+        </section>
+      </form>
 </body>
 <script src="js/custom-selector.js"></script>
 <script src="js/citas.js"></script>
-
+<script src="js/navegacion.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </script>
 </html>

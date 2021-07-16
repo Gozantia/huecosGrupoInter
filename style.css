@@ -16,9 +16,13 @@ header {
 
 header div {
     display: flex;
+    font-family: 'Bebas Neue', sans-serif;
 }
 header h2 {
     line-height: 0.8;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18vw;
+
 }
 
 header p, h2 {
@@ -27,6 +31,13 @@ header p, h2 {
 
 h1, h2 {
     font-size: 9vw;
+}
+h3 {
+    font-size: 7vw;
+    font-family: 'Bebas Neue', sans-serif;
+}
+section {
+ height: 80vh;   
 }
 
 /* input file style */
