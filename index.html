@@ -6,15 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="css/selector.css">
 
 </head>
 
 <body>
-    <select id="list-1" onchange="getSelectionValue()"></select>
-    <select id="list-2" onchange="getSelectionValue()"></select>
-    <select id="list-3" onchange="getSelectionValue()"></select>
+    
+    <div class="custom-select">
+        <select id="list-1" onchange="getSelectionValue()" class="special-select">
+            <option></option>
+        </select>
+        <select id="list-2"  class="special-select"></select>
+        
+        <span class="custom-arrow"></span>
+    </div>
+    
+    <div id="datep">
+        <input id="datetimepicker" type="text" >
+    </div>
     <script src="js/citas.js"></script>
+    <script src="js/calendar.js"></script>
+    
 </body>
 
 </html>

@@ -135,6 +135,10 @@ box-shadow: -1px 5px 15px 5px rgba(0,0,0,0.26);
     background-color: none;
 }
 
+.xdsoft_datetimepicker{
+background-color: none !important;
+border: none !important;
+}
 /* media */
 
   @media(min-width: 420px){
