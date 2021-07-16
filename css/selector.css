@@ -1,0 +1,65 @@
+body{
+    background-color: #f6efdf;
+}
+
+select{
+    font-size: 1rem;
+    padding: .2em 1em;
+    text-align: center;
+    background: #fff;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    appearance: none;
+}
+.special-select{
+    position: relative;
+}
+
+.custom-arrow{
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    background-color: red;
+    height: 1em;
+    width: 1em;
+    pointer-events: none;
+}
+
+/* calendar */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container{
+    width: 500px;
+    height: 500px;
+    outline: 1px solid red;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar{
+    width: 100%;
+    height: 100%;
+}
+
+.month{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    outline: 1px solid salmon;
+}
+
+
