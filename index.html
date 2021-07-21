@@ -35,8 +35,10 @@
             </div>
           </header>
        
-            <form>
+            <form onsubmit="return false" name="landingHuecos" >
+              <fieldset>
                 <section class="grid justify-items-center items-center" id="section1" >
+               
                   <div class="text-center">
                     <h4>SI CAÍSTE EN UN HUECO</h4>
                     <h3>sube la foto aquí.</h3>
@@ -63,14 +65,15 @@
 
                   <a class="btn-agendar px-4 py-1 rounded-md"  id="reclama">Reclama tu descuento</a>
                 </section>
+              </fieldset>
           <section class=" grid justify-items-center items-center text-center" id="section2" >
             <article class= "font-bold text-3xl w-screen ">
               <label for="Nombre" class="mt-16">Nombre</label>
               <input type="text" name="Nombre" id="name" class="rounded-md">
-              <label for="mail" class="error ">Correo</label>
-              <input type="text" name="mail" id="mail" class="rounded-md">
+              <label for="email" class="error ">Correo</label>
+              <input input type="email" id="email" name="email" class="rounded-md">
               <label for="tel" class="error ">Teléfono</label>
-              <input type="text" name="tel" id="tel" class="rounded-md">
+              <input type="tel" name="tel" id="tel" class="rounded-md">
             </article>
             <div>
               <a class="btn-agendar px-4 py-1 rounded-md mb-6 " id="agenda">AGENDA TU CITA YA</a>
@@ -98,7 +101,7 @@
         </div>
 
 
-          <a class="btn-agendar px-4 py-1 rounded-md mb-6 mt-20" id="descuento">HACER EFECTIVO MI DESCUENTO</a>
+          <button class="btn-agendar px-4 py-1 rounded-md mb-6 mt-20" id="descuento">HACER EFECTIVO MI DESCUENTO</button>
 
         </section>
 
