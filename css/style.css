@@ -1,8 +1,17 @@
-body {
-    background: #f1efe2;;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body{
+  background-image: linear-gradient( 
+    109.5deg
+    , rgb(239 229 213) 11.2%, rgba(223,205,187,1) 100.2% );
+    }
+
+
 header {
-    background: #a82b29;
+  background-image: linear-gradient( 
+    109.5deg
+    , rgb(134 33 32) 11.2%, rgb(167 43 43) 100.2% );
     color: #f1efe2;
     text-transform: uppercase;
     grid-template-columns: 5fr 1fr; 
@@ -20,7 +29,7 @@ header div {
 }
 header h2 {
     line-height: 0.8;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Bebas Neue', cursive;
     font-size: 18vw;
 
 }
@@ -40,26 +49,16 @@ section {
  height: 80vh;   
 }
 
-/* input file style */
-
-.input-file {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-
+.datosPersonales input {
+  padding: 0 !important;
+  color: #222 !important;
 }
-.js-labelFile {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    padding: 0 10px;
-    cursor: pointer;
-    display: grid;
-    justify-items: center;
+
+label {
+  font-family: 'Bebas Neue', sans-serif;
 }
+
+
 article div {
     display: grid;
     justify-items: center;
@@ -87,16 +86,21 @@ article div:hover {
 }
 
 .btn-agendar{
-    background-color: #a72b29;
+  background: #a82c29;
     color: #fff;
-    font-weight: 700;
+    cursor: pointer;
     font-family: 'Bebas', sans-serif;
+    transition: 0.3s;
 }
 .btn-agendar:hover,
 .btn-agendar:active{
-    background-color: #d22c29;
+  background: #7c1e1d;
 }
 
+.btn-agendar:disabled{
+  background-color:#222;
+  cursor: not-allowed;
+}
 /*///////////////////*/
 
 .calendar,
@@ -108,32 +112,7 @@ article div:hover {
     background-blend-mode: multiply;
     background-position: 50% 50%;
 }
-.calendar__title,
-label{
-    text-transform: uppercase;
-    font-family: 'Bebas Neue', sans-serif;
-}
-input{
-    background-color: #eee0c5;
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    margin: .2em auto .7em;
-    font-size: .5em;
-    text-align: center;
-}
-.btn-agendar{
-    background-color: #a72b29;
-    color: #fff;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: 'Bebas', sans-serif;
-    text-transform: uppercase;
-}
-.btn-agendar:hover,
-.btn-agendar:active{
-    background-color: #d22c29;
-}
+
 .form__text{
     font-size: .7em;
     max-width: 37ch;
@@ -242,10 +221,142 @@ border: none !important;
 }
 /* media */
 
-  @media(min-width: 420px){
-    .calendar,
-    .form{
-      background-image: url('../img/bg-2-h.png');
-      background-size: 85%;
-    }
-  }
+
+/*form styles*/
+#msform {
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	background: rgb(239 229 213) 11.2%  url("../img/texturita.png" ) repeat;
+	border: 0 none;
+	border-radius: 8px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+  display: grid;
+  height: 62vh;
+  gap: 20% 0;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 21px;
+  border-radius: 9px;
+}
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #D59549;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #D59549;
+}
+/*headings*/
+
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #ffffff;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #D59549;
+	color: white;
+}
+
+/*boton
+
+.upload-button-container {
+  position: relative;
+  display: inline-block;
+}
+.upload-button-container [type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.upload-button-container [type=file]:focus + .upload-button {
+  color: red;
+  box-shadow: 0 0 3px currentColor;
+}
+.upload-button-container .upload-button {
+  display: inline-block;
+  position: relative;
+  border: 3px solid currentColor;
+  border-radius: 4px;
+  margin: 0;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+.upload-button-container .upload-button:hover {
+  color: red;
+}
+
+*/
