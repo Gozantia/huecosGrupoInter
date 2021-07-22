@@ -74,5 +74,9 @@ function getSelectionValue() {
     checkSelectors('BELLO')
     checkSelectors('BOGOTÁ')
     checkSelectors('NEIVA')
+    for(let i = 0; i < uniCiudad.length; i++){
+        checkSelectors(uniCiudad[i])
+    }
     
 }
+

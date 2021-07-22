@@ -94,7 +94,19 @@ article div:hover {
 .btn-atras:hover {
   background: #b67f3d;
 
+
+  
 }
+.btn-atras::before {
+  content: 'hola';
+   font-family: "arial";
+   font-weight: normal;
+   font-style: normal;
+   margin:0px 0px 0px 10px;
+   text-decoration:none;
+}
+
+/*Redes Sociales*/
 .social_share {
   padding:0.5rem 1rem;
   border-radius:7px;
@@ -130,85 +142,10 @@ article div:hover {
 }
 
 
-.select {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  font-size: 16px;
-  color: #fff;
-  width: 220px;
-  height: 40px;
+select {
+  width: 100%;
 }
 
-.select-styled {
-  position: relative;
-  background-color: none;
-  padding: 8px 0px;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  color: black;
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 70%;
-  margin: 20px auto;
-}
-.select-styled:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border: 7px solid transparent;
-  border-color: black transparent transparent transparent;
-  position: absolute;
-  top: 16px;
-  right: 10px;
-}
-.select-styled:hover {
-  background-color: rgba(0,0,0,0.2);
-}
-.select-styled:active, .select-styled.active {
-  background-color: none;
-}
-.select-styled:active:after, .select-styled.active:after {
-  top: 9px;
-  border-color: transparent transparent black transparent;
-}
-
-.select-options {
-    position: relative;
-    width: 70%;
-    top: -20px;
-  display: none;
-  z-index: 999;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  background-color: #f6efdf;
-  border-radius: 5px;
-  -webkit-box-shadow: -1px 5px 15px 5px rgba(0,0,0,0.26); 
-box-shadow: -1px 5px 15px 5px rgba(0,0,0,0.26);
-}
-.select-options li {
-  margin: 0;
-  padding: 12px 0;
-  text-indent: 15px;
-  border-top: 1px solid rgba(0,0,0,0.2);
-  color: black;
-  text-align: center;
-  -moz-transition: all 0.15s ease-in;
-  -o-transition: all 0.15s ease-in;
-  -webkit-transition: all 0.15s ease-in;
-  transition: all 0.15s ease-in;
-}
-.select-options li:hover {
-  color: #fff;
-  background: #a72b29;
-}
-.select-options li[rel="hide"] {
-  display: none;
-}
 
 /* texto aceptar condiciones*/
 

@@ -143,9 +143,19 @@ localCampo.addEventListener("change", cambioEstado3);
 function esconderLocal(){
 	$("#localCampo").show();
 	$("#pasoFinal").prop('disabled', true);
+	var listaLocales = $('#localCampo');
+    var opciones = listaLocales.find('option');
+	if (opciones.length === 1) {
+		listaLocales.val($("#localCampo option:first").val());
+		$("#pasoFinal").prop('disabled', false);
+
+	}
+	
 }
 
+
 function cambioEstado3(){
+
 	if ((localSeleccionado !== " " ))
 	{	
 		$("#pasoFinal").prop('disabled', false);
