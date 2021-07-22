@@ -27,7 +27,6 @@ $(".next").click(function(){
 			//3. increase opacity of next_fs to 1 as it moves in
 			opacity = 1 - now;
 			current_fs.css({
-        'transform': 'scale('+scale+')',
         'position': 'absolute'
       });
 			next_fs.css({'left': left, 'opacity': opacity});
@@ -65,7 +64,8 @@ $(".previous").click(function(){
 			//3. increase opacity of previous_fs to 1 as it moves in
 			opacity = 1 - now;
 			current_fs.css({'left': left});
-			previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+			previous_fs.css({
+				 'opacity': opacity});
 		}, 
 		duration: 800, 
 		complete: function(){
@@ -81,12 +81,13 @@ $(".previous").click(function(){
 
 });
 
-$("#section4").hide();
-$(".submit").click(function(){
-    $("#msform").hide();
-    $("#section4").show();
-    
-})
+var shareItems = document.querySelectorAll('.social_share');
+for (var i = 0; i < shareItems.length; i += 1) {
+  shareItems[i].addEventListener('click', function share(e) {
+    return JSShare.go(this);
+  });
+}
+
 
 //validacion paso 1
 
@@ -115,7 +116,6 @@ let celular = document.querySelector("#celular")
 
 $("#pasoDatos").prop('disabled', true);
 
-
 nombre.addEventListener("keyup", cambioEstado2);
 correo.addEventListener("keyup", cambioEstado2);
 celular.addEventListener("keyup", cambioEstado2);
@@ -127,3 +127,34 @@ function cambioEstado2() {
 		$("#pasoDatos").prop('disabled', false);
     }
 }
+//validacion paso 3
+
+let ciudadCampo =document.querySelector("#ciudadCampo")
+let ciudadSeleccionada = ciudadCampo.options[ciudadCampo.selectedIndex].value;
+let localCampo =document.querySelector("#localCampo")
+let localSeleccionado = localCampo.options[localCampo.selectedIndex].value;
+
+$("#pasoFinal").prop('disabled', true);
+$("#localCampo").hide();
+
+ciudadCampo.addEventListener("change", esconderLocal);  
+localCampo.addEventListener("change", cambioEstado3);  
+
+function esconderLocal(){
+	$("#localCampo").show();
+	$("#pasoFinal").prop('disabled', true);
+}
+
+function cambioEstado3(){
+	if ((localSeleccionado !== " " ))
+	{	
+		$("#pasoFinal").prop('disabled', false);
+
+	}
+	else  {
+		$("#pasoFinal").prop('disabled', true);
+    }
+
+}
+
+

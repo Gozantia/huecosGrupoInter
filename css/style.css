@@ -12,30 +12,6 @@ header {
   background-image: linear-gradient( 
     109.5deg
     , rgb(134 33 32) 11.2%, rgb(167 43 43) 100.2% );
-    color: #f1efe2;
-    text-transform: uppercase;
-    grid-template-columns: 5fr 1fr; 
-  grid-template-areas: 
-    "tittleTop logo-img"
-    "tittleBottom tittleBottom"; 
-}
-.tittleTop { grid-area: tittleTop; }
-.logo-img { grid-area: logo-img; }
-.tittleBottom { grid-area: tittleBottom; }
-
-header div {
-    display: flex;
-    font-family: 'Bebas Neue', sans-serif;
-}
-header h2 {
-    line-height: 0.8;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 18vw;
-
-}
-
-header p, h2 {
-    display: inline;
 }
 
 h1, h2 {
@@ -79,10 +55,18 @@ article div:hover {
 }
 .fileChoice {
     background: #efe0c3;
+    margin: 3rem auto;
+    width: 80%;
+    min-height: 5.5rem;
+    place-items: center;
+}
+.fileChoice label {
+  line-height: 1px;
 }
 
-.fileChoice div {
-    cursor:pointer;
+#fotoCamara, #fotoAdjunta {
+  width: 59px;
+  height: 57px;
 }
 
 .btn-agendar{
@@ -91,6 +75,8 @@ article div:hover {
     cursor: pointer;
     font-family: 'Bebas', sans-serif;
     transition: 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
 }
 .btn-agendar:hover,
 .btn-agendar:active{
@@ -113,18 +99,6 @@ article div:hover {
     background-position: 50% 50%;
 }
 
-.form__text{
-    font-size: .7em;
-    max-width: 37ch;
-}
-
-/* dropdown selector */
-
-.select-hidden {
-  display: none;
-  visibility: hidden;
-  padding-right: 10px;
-}
 
 .select {
   cursor: pointer;
@@ -235,11 +209,9 @@ border: none !important;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
 	box-sizing: border-box;
-	width: 80%;
   display: grid;
-  height: 62vh;
-  gap: 20% 0;
 	margin: 0 10%;
+  width: 80%;
 	
 	/*stacking fieldsets above each other*/
 	position: relative;
@@ -249,17 +221,7 @@ border: none !important;
 	display: none;
 }
 /*inputs*/
-#msform input, #msform textarea {
-  padding: 5px 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  color: #fff;
-  font-size: 21px;
-  border-radius: 9px;
-}
+
 /*buttons*/
 #msform .action-button {
 	width: 100px;

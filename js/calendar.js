@@ -26,7 +26,7 @@ $(document).ready(function () {
     roundTime: 'round',
     disabledWeekDays: [0],
     changeYear: true,
-    yearStart: '2020',
+    yearStart: '2021',
     yearEnd: '2021',
   };
   jQuery("#datetimepicker").datetimepicker(options);

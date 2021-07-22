@@ -22,8 +22,8 @@ let ciudad = []
 let uniCiudad = []
 let uniLocal = []
 
-const list1 = document.getElementById('list-1')
-const list2 = document.getElementById('list-2')
+const list1 = document.getElementById('ciudadCampo')
+const list2 = document.getElementById('localCampo')
 
 getData().then((resp)=>{
     // console.log("RESp", resp)
@@ -56,7 +56,7 @@ getData().then((resp)=>{
 })
 
 function checkSelectors(ciudad){
-    if (document.getElementById('list-1').value == `${ciudad}`) {
+    if (document.getElementById('ciudadCampo').value == `${ciudad}`) {
         for (let i = 0; i < uniLocal.length; i++) {
             if (locales[i].ciudad == `${ciudad}`) {
                 option = document.createElement('option');
