@@ -116,11 +116,11 @@ let celular = document.querySelector("#celular")
 $("#pasoDatos").prop('disabled', true);
 
 
-nombre.addEventListener("change", cambioEstado2);
-
-
+nombre.addEventListener("keyup", cambioEstado2);
+correo.addEventListener("keyup", cambioEstado2);
+celular.addEventListener("keyup", cambioEstado2);
 function cambioEstado2() {
-    if((correo.value!== "" && nombre.value === ""  )   ) {
+    if((correo.value== "" || nombre.value == "" || celular.value == ""  )   ) {
 	
         $("#pasoDatos").prop('disabled', true);
     } else {
