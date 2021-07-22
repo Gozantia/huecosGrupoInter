@@ -67,15 +67,15 @@
   </fieldset>
   <fieldset>
  
-    <article class= "font-bold text-3xl grid">
-      <label for="nombre" >Nombre</label>
-      <input type="text" name="nombre" id="nombre" class="rounded-md w-full p-2 text-sm" />
-      <label for="correo" >Correo</label>
-      <input input type="email" id="correo" name="correo" class="rounded-md w-full p-2 text-sm" />
-      <label for="celular"  >Celular</label>
-      <input type="tel" name="celular" id="celular" class="rounded-md w-full p-2 text-sm" />
+    <article class= "font-bold text-3xl grid mb-8">
+      <label class = "my-2" for="nombre" >Nombre</label>
+      <input type="text" name="nombre" id="nombre" class="rounded-md w-full p-2 text-sm text-center" />
+      <label class = "my-2" for="correo" >Correo</label>
+      <input input type="email" id="correo" name="correo" class="rounded-md w-full p-2 text-sm text-center" />
+      <label class = "my-2" for="celular"  >Celular</label>
+      <input type="tel" name="celular" id="celular" class="rounded-md w-full p-2 text-sm text-center" />
     </article>
-    <input type="button" name="previous" class="previous action-button" value="Atrás"  />
+    <input type="button" name="previous" class="previous btn-atras" value="Atrás"  />
     <input type="button" name="next" class="next btn-agendar" id ="pasoDatos"  value="AGENDA TU CITA YA"  />
 
     <p class="text-xs text-center mt-2 mx-auto">ACTIVANDO EL BOTÓN ACEPTAS
@@ -102,7 +102,7 @@
       <input id="datetimepicker" type="text" >
   </div>
 
-    <input type="button" name="previous" class="previous action-button" value="Atrás" />
+    <input type="button" name="previous" class="previous btn-atras" value="Atrás" />
     <input type="submit" name="submit" class="next btn-agendar" value="Enviar" id="pasoFinal"/>
   </fieldset>
 
@@ -122,12 +122,12 @@
     TU DESCUENTO.
   </p>
   
-  <input type="button" name="previous" class="previous action-button" value="Modificar algo" />
+  <input type="button" name="previous" class="previous btn-atras" value="Modificar algo" />
 
-  <article><h4>Comparte con tus amigos</h4>
-    <button class="btn btn-default social_share" data-type="twitter">Twitter</button>
-    <button class="btn btn-default social_share" data-type="fb">Facebook</button>
-    <button class="btn btn-default social_share" data-type="whatsapp">Whatsapp</button>
+  <article><h4 class= "font-bold mt-8 mb-4"> Comparte con tus amigos en:</h4>
+    <button class="twitter social_share" data-type="twitter">Twitter</button>
+    <button class="facebook social_share" data-type="fb">Facebook</button>
+    <button class="whatsapp social_share" data-type="whatsapp">Whatsapp</button>
   </article>
 
   
