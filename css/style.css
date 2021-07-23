@@ -12,30 +12,6 @@ header {
   background-image: linear-gradient( 
     109.5deg
     , rgb(134 33 32) 11.2%, rgb(167 43 43) 100.2% );
-    color: #f1efe2;
-    text-transform: uppercase;
-    grid-template-columns: 5fr 1fr; 
-  grid-template-areas: 
-    "tittleTop logo-img"
-    "tittleBottom tittleBottom"; 
-}
-.tittleTop { grid-area: tittleTop; }
-.logo-img { grid-area: logo-img; }
-.tittleBottom { grid-area: tittleBottom; }
-
-header div {
-    display: flex;
-    font-family: 'Bebas Neue', sans-serif;
-}
-header h2 {
-    line-height: 0.8;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 18vw;
-
-}
-
-header p, h2 {
-    display: inline;
 }
 
 h1, h2 {
@@ -44,6 +20,7 @@ h1, h2 {
 h3 {
     font-size: 7vw;
     font-family: 'Bebas Neue', sans-serif;
+    line-height: 2rem;
 }
 section {
  height: 80vh;   
@@ -79,18 +56,29 @@ article div:hover {
 }
 .fileChoice {
     background: #efe0c3;
+    margin: 3rem auto;
+    width: 80%;
+    min-height: 5.5rem;
+    place-items: center;
+}
+.fileChoice label {
+  line-height: 1px;
 }
 
-.fileChoice div {
-    cursor:pointer;
+#fotoCamara, #fotoAdjunta {
+  width: 59px;
+  height: 57px;
 }
 
-.btn-agendar{
+.btn-agendar, .btn-atras{
   background: #a82c29;
-    color: #fff;
-    cursor: pointer;
-    font-family: 'Bebas', sans-serif;
-    transition: 0.3s;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Bebas Neue';
+  font-size: 2.5vh;
+  transition: 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
 }
 .btn-agendar:hover,
 .btn-agendar:active{
@@ -100,6 +88,48 @@ article div:hover {
 .btn-agendar:disabled{
   background-color:#222;
   cursor: not-allowed;
+}
+
+.btn-atras{
+  background: #D59549;
+  margin-bottom: 1rem;
+}
+.btn-atras:hover {
+  background: #b67f3d;
+
+
+  
+}
+.btn-atras::before {
+  content: 'hola';
+   font-family: "arial";
+   font-weight: normal;
+   font-style: normal;
+   margin:0px 0px 0px 10px;
+   text-decoration:none;
+}
+
+/*Redes Sociales*/
+.social_share {
+  padding:0.5rem 1rem;
+  border-radius:7px;
+  font-size: small;
+  color: #fff;
+  font-weight: 100;
+  opacity: 1;
+  transition: 0.3s;
+}
+.social_share:hover {
+  opacity:0.8;
+}
+.twitter {
+  background: #1DA1F2;
+}
+.facebook {
+  background: #1877F2;
+}
+.whatsapp {
+  background: #25D366;
 }
 /*///////////////////*/
 
@@ -113,98 +143,11 @@ article div:hover {
     background-position: 50% 50%;
 }
 
-.form__text{
-    font-size: .7em;
-    max-width: 37ch;
+
+select {
+  width: 100%;
 }
 
-/* dropdown selector */
-
-.select-hidden {
-  display: none;
-  visibility: hidden;
-  padding-right: 10px;
-}
-
-.select {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  font-size: 16px;
-  color: #fff;
-  width: 220px;
-  height: 40px;
-}
-
-.select-styled {
-  position: relative;
-  background-color: none;
-  padding: 8px 0px;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  color: black;
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 70%;
-  margin: 20px auto;
-}
-.select-styled:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border: 7px solid transparent;
-  border-color: black transparent transparent transparent;
-  position: absolute;
-  top: 16px;
-  right: 10px;
-}
-.select-styled:hover {
-  background-color: rgba(0,0,0,0.2);
-}
-.select-styled:active, .select-styled.active {
-  background-color: none;
-}
-.select-styled:active:after, .select-styled.active:after {
-  top: 9px;
-  border-color: transparent transparent black transparent;
-}
-
-.select-options {
-    position: relative;
-    width: 70%;
-    top: -20px;
-  display: none;
-  z-index: 999;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  background-color: #f6efdf;
-  border-radius: 5px;
-  -webkit-box-shadow: -1px 5px 15px 5px rgba(0,0,0,0.26); 
-box-shadow: -1px 5px 15px 5px rgba(0,0,0,0.26);
-}
-.select-options li {
-  margin: 0;
-  padding: 12px 0;
-  text-indent: 15px;
-  border-top: 1px solid rgba(0,0,0,0.2);
-  color: black;
-  text-align: center;
-  -moz-transition: all 0.15s ease-in;
-  -o-transition: all 0.15s ease-in;
-  -webkit-transition: all 0.15s ease-in;
-  transition: all 0.15s ease-in;
-}
-.select-options li:hover {
-  color: #fff;
-  background: #a72b29;
-}
-.select-options li[rel="hide"] {
-  display: none;
-}
 
 /* texto aceptar condiciones*/
 
@@ -235,11 +178,9 @@ border: none !important;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
 	box-sizing: border-box;
-	width: 80%;
   display: grid;
-  height: 62vh;
-  gap: 20% 0;
 	margin: 0 10%;
+  width: 80%;
 	
 	/*stacking fieldsets above each other*/
 	position: relative;
@@ -249,17 +190,7 @@ border: none !important;
 	display: none;
 }
 /*inputs*/
-#msform input, #msform textarea {
-  padding: 5px 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  color: #fff;
-  font-size: 21px;
-  border-radius: 9px;
-}
+
 /*buttons*/
 #msform .action-button {
 	width: 100px;
@@ -326,37 +257,24 @@ border: none !important;
 	color: white;
 }
 
-/*boton
+@media (min-width: 768px) { 
 
-.upload-button-container {
-  position: relative;
-  display: inline-block;
-}
-.upload-button-container [type=file] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-}
-.upload-button-container [type=file]:focus + .upload-button {
-  color: red;
-  box-shadow: 0 0 3px currentColor;
-}
-.upload-button-container .upload-button {
-  display: inline-block;
-  position: relative;
-  border: 3px solid currentColor;
-  border-radius: 4px;
-  margin: 0;
-  padding: 0.5em 1em;
-  cursor: pointer;
-}
-.upload-button-container .upload-button:hover {
-  color: red;
-}
+  h3 {
 
-*/
+    line-height: 6rem;
+      }   
+
+      .social_share {
+        margin: 0 10px;
+
+    }
+
+ }
+
+ @media (min-width: 1536px) {
+  h3 {
+
+    line-height: 8rem;
+      }   
+
+  }

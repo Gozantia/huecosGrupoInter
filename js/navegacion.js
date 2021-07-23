@@ -27,13 +27,12 @@ $(".next").click(function () {
 			//3. increase opacity of next_fs to 1 as it moves in
 			opacity = 1 - now;
 			current_fs.css({
-				'transform': 'scale(' + scale + ')',
-				'position': 'absolute'
-			});
-			next_fs.css({ 'left': left, 'opacity': opacity });
-		},
-		duration: 800,
-		complete: function () {
+        'position': 'absolute'
+      });
+			next_fs.css({'left': left, 'opacity': opacity});
+		}, 
+		duration: 800, 
+		complete: function(){
 			current_fs.hide();
 			animating = false;
 		},
@@ -64,11 +63,12 @@ $(".previous").click(function () {
 			left = ((1 - now) * 50) + "%";
 			//3. increase opacity of previous_fs to 1 as it moves in
 			opacity = 1 - now;
-			current_fs.css({ 'left': left });
-			previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
-		},
-		duration: 800,
-		complete: function () {
+			current_fs.css({'left': left});
+			previous_fs.css({
+				 'opacity': opacity});
+		}, 
+		duration: 800, 
+		complete: function(){
 			current_fs.hide();
 			animating = false;
 		},
@@ -81,12 +81,13 @@ $(".previous").click(function () {
 
 });
 
-$("#section4").hide();
-$(".submit").click(function () {
-	$("#msform").hide();
-	$("#section4").show();
+var shareItems = document.querySelectorAll('.social_share');
+for (var i = 0; i < shareItems.length; i += 1) {
+  shareItems[i].addEventListener('click', function share(e) {
+    return JSShare.go(this);
+  });
+}
 
-})
 
 //validacion paso 1
 
@@ -113,19 +114,60 @@ let correo = document.querySelector("#correo")
 let celular = document.querySelector("#celular")
 
 $("#pasoDatos").prop('disabled', true);
-
-
+let nombreUsuario = $("#nombre").val();
 nombre.addEventListener("keyup", cambioEstado2);
 correo.addEventListener("keyup", cambioEstado2);
 celular.addEventListener("keyup", cambioEstado2);
-
-
-
 function cambioEstado2() {
-	$("#pasoDatos").prop('disabled', true);
-	if ((correo.value == "" || nombre.value == "" || celular.value == "")) {
-		$("#pasoDatos").prop('disabled', true);
-	} else {
+
+    if((correo.value== "" || nombre.value == "" || celular.value == ""  )   ) {
+	
+        $("#pasoDatos").prop('disabled', true);
+    } else {
 		$("#pasoDatos").prop('disabled', false);
-	}
+    }
 }
+//validacion paso 3
+
+let ciudadCampo =document.querySelector("#ciudadCampo")
+let ciudadSeleccionada = ciudadCampo.options[ciudadCampo.selectedIndex].value;
+let localCampo =document.querySelector("#localCampo")
+let localSeleccionado = localCampo.options[localCampo.selectedIndex].value;
+
+$("#pasoFinal").prop('disabled', true);
+$("#localCampo").hide();
+
+ciudadCampo.addEventListener("change", esconderLocal);  
+localCampo.addEventListener("change", cambioEstado3);  
+
+function esconderLocal(){
+	$("#localCampo").show();
+	$("#pasoFinal").prop('disabled', true);
+	var listaLocales = $('#localCampo');
+    var opciones = listaLocales.find('option');
+	if (opciones.length === 1) {
+		listaLocales.val($("#localCampo option:first").val());
+		$("#pasoFinal").prop('disabled', false);
+
+	}
+	
+}
+
+
+function cambioEstado3(){
+
+
+	$('.nombreUsuario').text($(nombre).val())
+	
+	if ((localSeleccionado !== " " ))
+	{	
+		$("#pasoFinal").prop('disabled', false);
+
+	}
+	else  {
+		$("#pasoFinal").prop('disabled', true);
+    }
+
+}
+
+

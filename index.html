@@ -16,23 +16,20 @@
   <link rel="stylesheet" href="css/calendar.css">
   <link rel="shortcut icon" type="icon" href="favicon.ico"/>
   <link rel="stylesheet" href="css/style.css">
+  <script src="/js/jsshare.js"></script>
 </head>
 
-<body>
+<body class="md:flex">
         
-          <header class="grid p-4"> 
+          <header class="grid p-4 md:flex-1 md:h-screen md:content-center "> 
             
-            <div class="tittleTop">
-              <p>un</p><h2>Hueco</h2> 
-            </div>
-            <img src="logoGrupoInter.svg" alt="GrupoInter" class="logo-img">
-            <div class="tittleBottom">
-              <p>un</p> <h2>Descuento</h2> <p>del</p> <h2>20</h2><p>%</p>
-            </div>
+           
+            <img src="logoGrupoInter.svg" alt="GrupoInter" class="w-1/5 mx-auto mb-3 md: w-2/5">
+            <img src="img/unHuecoUnDescuento.svg" alt="¡Aprovecha!" class="w-3/5 m-auto mt-2" >
           </header>
 
 <!-- multistep form -->
-<form id="msform" onsubmit="return false">
+<form id="msform" onsubmit="return false" class="md:flex-1">
   <!-- progressbar -->
   
   <ul id="progressbar">
@@ -49,7 +46,7 @@
     <article class="fileChoice flex border border-gray-400 rounded p-2">
       <div class=" flex-1 border-r border-gray-600">
         <input type="file" name="fotoAdjunta" id="fotoAdjunta" placeholder="png, jpg, gif" accept="image/*" class="opacity-0" />
-        <label for="fotoAdjunta" class="-mt-16 grid">
+        <label for="fotoAdjunta" class="-mt-16 grid cursor-pointer z-10">
           <i class="icon fa fa-images"></i>
           <span >AGREGAR </span>
           <span >IMAGEN</span>
@@ -57,7 +54,7 @@
       </div>
       <div class="flex-1">
         <input type="file" name="fotoCamara" id="fotoCamara" accept="image/*" capture="camera" class="opacity-0"/>
-        <label for="fotoCamara"class="-mt-16 grid" >
+        <label for="fotoCamara"class="-mt-16 grid cursor-pointer z-10 " >
         <i class="fas fa-camera-retro"></i>
         <span >TOMAR </span>
         <span >FOTO </span>
@@ -70,30 +67,34 @@
   </fieldset>
   <fieldset>
  
-    <article class= "font-bold text-3xl datosPersonales">
-      <label for="nombre" >Nombre</label>
-      <input type="text" name="nombre" id="nombre" class="rounded-md" />
-      <label for="correo" >Correo</label>
-      <input input type="email" id="correo" name="correo" class="rounded-md" />
-      <label for="celular"  >Celular</label>
-      <input type="tel" name="celular" id="celular" class="rounded-md" />
+    <article class= "font-bold text-3xl grid mb-8">
+      <label class = "my-2" for="nombre" >Nombre</label>
+      <input type="text" name="nombre" id="nombre" class="rounded-md w-full p-2 text-sm text-center" />
+      <label class = "my-2" for="correo" >Correo</label>
+      <input input type="email" id="correo" name="correo" class="rounded-md w-full p-2 text-sm text-center" />
+      <label class = "my-2" for="celular"  >Celular</label>
+      <input type="tel" name="celular" id="celular" class="rounded-md w-full p-2 text-sm text-center" />
     </article>
-    <input type="button" name="previous" class="previous action-button" value="Atrás"  />
+    <input type="button" name="previous" class="previous btn-atras" value="Atrás"  />
     <input type="button" name="next" class="next btn-agendar" id ="pasoDatos"  value="AGENDA TU CITA YA"  />
 
-    <p class="form__text text-center mt-2 m-auto">ACTIVANDO EL BOTÓN ACEPTAS
+    <p class="text-xs text-center mt-2 mx-auto">ACTIVANDO EL BOTÓN ACEPTAS
       NUESTROS <a href="#" class="click__me">TÉRMINOS Y CONDICIONES</a> </p>
       
   </fieldset>
   <fieldset>
     <h3 >AGENDA TU CITA</h3>
-    <h3>PUNTO DE VENTA:</h3>
+    <h3>PUNTO DE Atención:</h3>
     
     <div class="custom-select">
-      <select id="list-1" onchange="getSelectionValue()" class="special-select" name= "ciudad">
+      <select id="ciudadCampo" onchange="getSelectionValue()" class="special-select" name= "ciudad" required>
+        <option value="" disabled selected>Ciudad</option>
           <option></option>
       </select>
-      <select id="list-2"  class="special-select"></select>
+      <select id="localCampo"  class="special-select" name="local">
+        <option value="" disabled selected>Punto</option>
+        <option></option>
+      </select>
       
   </div>
   
@@ -101,29 +102,39 @@
       <input id="datetimepicker" type="text" >
   </div>
 
-    <input type="button" name="previous" class="previous action-button" value="Atrás" />
-    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+    <input type="button" name="previous" class="previous btn-atras" value="Atrás" />
+    <input type="submit" name="submit" class="next btn-agendar" value="HACER EFECTIVO MI DESCUENTO" id="pasoFinal"/>
   </fieldset>
-</form>
 
-<section class=" text-center w-9/12 mx-auto " id="section4">
+
+<fieldset class=" text-center w-9/12 mx-auto " id="section4">
   <h3 class="my-4">¡TU CITA ESTA AGENDADA!</h3>
 
   <p>
-    TU DESCUENTO TE ESTÁ ESPERANDO
+    TU DESCUENTO TE ESTÁ ESPERANDO <strong class="nombreUsuario"></strong>
     EN EL PUNTO DE SERVICIO “SAN JUAN”,
     ESTE VIERNES 17 DE JULIO A LAS 11:30 A.M.
   </p>
+
   <p  class="my-4">
     RECIBIRÁS UN QR EN TU CORREO,
     PRESÉNTALO PARA HACER EFECTIVO
     TU DESCUENTO.
   </p>
   
-</section>
+  <input type="button" name="previous" class="previous btn-atras" value="Modificar algo" />
 
+  <article><h4 class= "font-bold mt-8 mb-4"> Comparte con tus amigos en:</h4>
+    <button class="twitter social_share" data-type="twitter">Twitter</button>
+    <button class="facebook social_share" data-type="fb">Facebook</button>
+    <button class="whatsapp social_share" data-type="whatsapp">Whatsapp</button>
+  </article>
+
+  
+</fieldset>
+</form>
 </body>
-<script src="js/navegacion.js"></script>
+<script type="module" src="js/navegacion.js"></script>
 <script src="js/citas.js"></script>
 <script src="js/calendar.js"></script>
 </html>
