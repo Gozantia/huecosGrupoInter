@@ -156,9 +156,8 @@ function esconderLocal(){
 
 function cambioEstado3(){
 
+	console.log($(localSeleccionado).val())
 
-	$('.nombreUsuario').text($(nombre).val())
-	
 	if ((localSeleccionado !== " " ))
 	{	
 		$("#pasoFinal").prop('disabled', false);
