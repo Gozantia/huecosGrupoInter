@@ -1,8 +1,49 @@
+jQuery.datetimepicker.setLocale("es");
 
 //jQuery time
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
+var lugar;
+var horario;
+
+$(document).ready(function () {
+    var d = new Date();
+           var currMonth = d.getMonth();
+           var currYear = d.getFullYear();
+           var startDate = new Date(currYear, currMonth, 1);
+  var options = {
+    allowTimes: [
+      "8:00",
+      "9:00",
+      "10:00",
+      "11:00",
+      "12:00",
+      "13:00",
+      "14:00",
+      "15:00",
+      "16:00",
+      "17:00",
+    ],
+    minDate: 0,
+    startDate:new Date(),
+    inline:true,
+    mask:'9999/19/39',
+    format:'Y/m/d H:i',
+    // yearEnd: 2021,
+    roundTime: 'round',
+    disabledWeekDays: [0],
+    changeYear: true,
+    yearStart: '2021',
+    yearEnd: '2021',
+
+    onChangeDateTime:function(dp,$input){
+      cambioEstado3()
+    }
+  };
+  jQuery("#datetimepicker").datetimepicker(options);
+});
+
 
 $(".next").click(function () {
 	if (animating) return false;
@@ -39,6 +80,7 @@ $(".next").click(function () {
 		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
 	});
+	cambioEstado2()
 });
 
 $(".previous").click(function () {
@@ -134,6 +176,7 @@ let ciudadSeleccionada = ciudadCampo.options[ciudadCampo.selectedIndex].value;
 let localCampo =document.querySelector("#localCampo")
 let localSeleccionado = localCampo.options[localCampo.selectedIndex].value;
 
+
 $("#pasoFinal").prop('disabled', true);
 $("#localCampo").hide();
 
@@ -148,17 +191,25 @@ function esconderLocal(){
 	if (opciones.length === 1) {
 		listaLocales.val($("#localCampo option:first").val());
 		$("#pasoFinal").prop('disabled', false);
-
 	}
-	
+
 }
 
 
 function cambioEstado3(){
+	lugar = $("#localCampo").val()
+	console.log("Local seleccionado", lugar)
+	$("#lugar").text(lugar)
+	
 
-	console.log($(localSeleccionado).val())
-
-	if ((localSeleccionado !== " " ))
+	var date  = $('#datetimepicker').datetimepicker('getValue');
+	var hr = date.toLocaleTimeString('es-ES').split(":")
+	
+	horario  = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+" "+hr[0]+":"+ hr[1]+":00";
+	$("#horario").text(horario)
+	console.log("DATE", date, horario)
+	$("#pasoFinal").prop('disabled', true);
+	if ((lugar != "" && horario != "" ))
 	{	
 		$("#pasoFinal").prop('disabled', false);
 
