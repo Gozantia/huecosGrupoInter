@@ -162,8 +162,10 @@ correo.addEventListener("keyup", cambioEstado2);
 celular.addEventListener("keyup", cambioEstado2);
 function cambioEstado2() {
 
-    if((correo.value== "" || nombre.value == "" || celular.value == ""  )   ) {
+	var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
 	
+    if(( regex.test(correo.value) || nombre.value == "" || celular.value == ""  )   ) {
+		console.log(regex.test(correo.value))
         $("#pasoDatos").prop('disabled', true);
     } else {
 		$("#pasoDatos").prop('disabled', false);
@@ -184,7 +186,7 @@ ciudadCampo.addEventListener("change", esconderLocal);
 localCampo.addEventListener("change", cambioEstado3);  
 
 function esconderLocal(){
-	$("#localCampo").show();
+	$("#localCampo").show("slow");
 	$("#pasoFinal").prop('disabled', true);
 	var listaLocales = $('#localCampo');
     var opciones = listaLocales.find('option');
@@ -205,7 +207,7 @@ function cambioEstado3(){
 	var date  = $('#datetimepicker').datetimepicker('getValue');
 	var hr = date.toLocaleTimeString('es-ES').split(":")
 	
-	horario  = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+" "+hr[0]+":"+ hr[1]+":00";
+	horario  = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+" "+ "a las "+ hr[0]+":"+ hr[1]+":00";
 	$("#horario").text(horario)
 	console.log("DATE", date, horario)
 	$("#pasoFinal").prop('disabled', true);

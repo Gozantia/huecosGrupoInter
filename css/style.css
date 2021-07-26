@@ -45,7 +45,8 @@ article div {
 
 
 }
-article div:hover {
+article div:hover, 
+article div:active {
 
     color: #a82c29;
     
@@ -167,7 +168,6 @@ border: none !important;
 
 /*form styles*/
 #msform {
-	margin: 50px auto;
 	text-align: center;
 	position: relative;
 }
@@ -262,6 +262,8 @@ border: none !important;
   h3 {
 
     line-height: 6rem;
+    font-size: 5vw;
+
       }   
 
       .social_share {
@@ -274,12 +276,16 @@ border: none !important;
  @media (min-width: 1536px) {
   h3 {
 
-    line-height: 8rem;
+    line-height: 5rem;
       }   
 
   }
 
 
   .custom-select select{
-    
+    background-color:transparent;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 7px;
+    margin: 5px auto;
   }

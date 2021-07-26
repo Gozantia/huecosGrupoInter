@@ -19,7 +19,7 @@
   <script src="/js/jsshare.js"></script>
 </head>
 
-<body class="md:flex">
+<body class="md:flex h-screen">
         
           <header class="grid p-4 md:flex-1 md:h-screen md:content-center "> 
             
@@ -29,7 +29,7 @@
           </header>
 
 <!-- multistep form -->
-<form id="msform" onsubmit="return false" class="md:flex-1">
+<form id="msform" onsubmit="return false" class="md:flex-1 md:self-center mt-6 md:mt-0">
   <!-- progressbar -->
   
   <ul id="progressbar">
@@ -111,18 +111,16 @@
   <h3 class="my-4">¡TU CITA ESTA AGENDADA!</h3>
 
   <p>
-    TU DESCUENTO TE ESTÁ ESPERANDO <strong class="nombreUsuario"></strong>
+    TU DESCUENTO TE ESTÁ ESPERANDO
     EN EL PUNTO DE SERVICIO  <strong id="lugar">
-
-    </strong>,
+    </strong> en la fecha 
     <strong id="horario">
-
     </strong>
     
   </p>
 
   <p  class="my-4">
-    RECIBIRÁS UN QR EN TU CORREO,
+    RECIBIRÁS UN CORREO DE CONFIRMACIÓN,
     PRESÉNTALO PARA HACER EFECTIVO
     TU DESCUENTO.
   </p>
@@ -141,5 +139,5 @@
 </body>
 <script type="module" src="js/navegacion.js"></script>
 <script src="js/citas.js"></script>
-<script src="js/calendar.js"></script>
+
 </html>

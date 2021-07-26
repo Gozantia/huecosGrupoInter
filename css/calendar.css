@@ -111,12 +111,15 @@ button.xdsoft_today_button{
 #datep > div > div.xdsoft_datepicker.active > div.xdsoft_monthpicker > button.xdsoft_prev{
     width: 10px;
 }
-
+/* Mess */
+.xdsoft_monthpicker {
+    display: flex;
+}
 /* horas */
 .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div{
     background-color: #e8d5b8;
+    width: 83px ​!important;
     border-radius: 8px;
-    width: inherit;
     margin: 6px 0;
     color: #222;
     font-family: 'Bebas Neue';
@@ -191,3 +194,6 @@ font-size: 1.5vw;
  .xdsoft_datetimepicker .xdsoft_calendar td:hover, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div:hover {
     background-color: #B41821 !important;
  }
+ .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today {
+    color: #d59549;
+}   
