@@ -148,6 +148,7 @@ function cambioEstado1() {
   if (jQuery(fotoAdjunta).val() == "" && jQuery(fotoCamara).val() == "") {
     $("#pasoFoto").prop("disabled", true);
   } else {
+    $("#pasoFoto").addClass("botonAnimado")
     $("#pasoFoto").prop("disabled", false);
   }
 }
@@ -163,12 +164,13 @@ nombre.addEventListener("keyup", cambioEstado2);
 correo.addEventListener("keyup", cambioEstado2);
 celular.addEventListener("keyup", cambioEstado2);
 function cambioEstado2() {
-  var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+  var correoValidador = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-  if (!regex.test(correo.value) || nombre.value == "" || celular.value == "") {
-    console.log(regex.test(correo.value));
+  if (!correoValidador.test(correo.value) || nombre.value == "" || celular.value.length < 10 ) {
+
     $("#pasoDatos").prop("disabled", true);
   } else {
+    $("#pasoDatos").addClass("botonAnimado")
     $("#pasoDatos").prop("disabled", false);
   }
 }
@@ -220,6 +222,7 @@ function cambioEstado3() {
   console.log("DATE", date, horario);
   $("#pasoFinal").prop("disabled", true);
   if (lugar != "" && horario != "") {
+    $("#pasoFinal").addClass("botonAnimado")
     $("#pasoFinal").prop("disabled", false);
   } else {
     $("#pasoFinal").prop("disabled", true);
