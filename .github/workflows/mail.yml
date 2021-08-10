@@ -1,0 +1,19 @@
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: 192.185.67.181
+          username: grupointer@interllantas.com
+          password: Problem4321
+          server-dir: grupointer.co/huecos/
+          exclude:
+          - **/.git*
+          - **/.git*/**
+          - **/node_modules/**
+          - **/github/**
