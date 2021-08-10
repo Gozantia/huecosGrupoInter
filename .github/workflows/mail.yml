@@ -12,8 +12,3 @@ jobs:
           username: grupointer@interllantas.com
           password: Problem4321
           server-dir: grupointer.co/huecos/
-          exclude:
-          - **/.git*
-          - **/.git*/**
-          - **/node_modules/**
-          - **/github/**
